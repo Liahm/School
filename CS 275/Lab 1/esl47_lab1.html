@@ -1,0 +1,58 @@
+<html>
+    <head>
+    <h1> Fibonacci Website? </h1>
+    </head>
+    <body>
+    <h4>The Fibonacci sequence appears in Indian mathematics, in connection with Sanskrit prosody. In the Sanskrit tradition of prosody, there was interest in enumerating all patterns of long (L) syllables that are 2 units of duration, and short (S) syllables that are 1 unit of duration. Counting the different patterns of L and S of a given duration results in the Fibonacci numbers: the number of patterns that are m short syllables long is the Fibonacci number Fm + 1. </h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/PascalTriangleFibanacci.svg/480px-PascalTriangleFibanacci.svg.png" alt="fibonacci" style="width:400px;, height:600px;"> 
+    <p></p>
+    <input type ="text" value="" id="textbox1" style="width:200px;,height:700px;" />
+    <p></p>
+    <input type="button" value="Compute!" id="button1" onClick="add()" />
+
+
+    <script>
+    function add(){
+        var numMax = document.getElementById('textbox1').value;
+        var Max = parseInt(numMax);
+        var i, j, k, x, counter =0;
+        var text ="", second ="";
+        var restorepage = document.body.innerHTML
+        var fib = [0, 1]; //empty array for now
+        //k is the number of iterations that the for loop will run.
+        //i = to the number j was previously.
+        //j = to the sum between i and j itself.
+        //x = is where i and j gets added. I and J only change after looped.
+        document.write(restorepage); //Restore the entire page so that whenever I use document.write it will not appear in a NEW page
+        if(Max != parseInt(numMax))
+            window.alert("Not a number");
+        else if(Max < 0)
+            window.alert("Number is less than 0");    
+        else
+        {
+            var table = '<table style="width: 20%;", border ="4"> \n <tbody>';
+            var table2 = '<tr><td><h3>  n </h3> </td><td><h3>fib(n)</h3> </td>           </tr>'    
+            document.write(table + table2);    
+                
+            for(i=0, j=1, k=0; k<=Max; i=j, j=x, k++)
+            {
+                x=i+j;
+                //add the new x into the array.
+                //document.write('<tr><td>' + fib + '</tr></td> ')
+                fib.push(x);
+                text = '<tr><td> ' + counter + '</td> ';
+                second = '<td> ' + fib[k] + ' </td></tr>';
+                document.write(text + second);
+                counter++;
+            }
+        }
+        var endTable = "</tbody> </table>";
+        //Fib will always print [0,1] because that's the initial value
+        document.write(endTable);
+    } 
+    
+    </script>
+   
+
+</html>
+

@@ -1,0 +1,58 @@
+<html>
+<head>
+    <h1>WEATHER FORECAST </h1>
+    <h5>by Eric Lee, info from wunderground</h5>
+</head>
+
+<body>
+
+    <input type ="text" value="" id="zipcode" style="width:200px;,height:200px;" /> 
+    <input type=button value="Get Weather!" id="button1" onclick="getWeather()" />
+    <div id="weather">
+    </div>
+    <p><span id="temp"></span></p>
+    <span id="icon" />
+
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+<script>
+
+function getWeather(){
+    var imgTag = "<img src=";
+    var User_zip = document.getElementById('zipcode').value;
+    var xhttp = new XMLHttpRequest();
+    //var URL = "http://api.wunderground.com/api/6877680b28c8d41b/conditions/q/"+User_zip+".json";
+    var URL2 = "http://api.wunderground.com/api/6877680b28c8d41b/hourly/q/"+User_zip+".json";
+    var div = document.getElementById('weather');
+    //xhttp.open("GET", URL, false);
+    //xhttp.send(null);
+    //var r = JSON.parse(xhttp.response);
+
+    //var weather = "Current Location: " + r.current_observation.display_location.full + "<br />";
+    //document.getElementById("weather").innerHTML = weather;
+    
+    		$.ajax({
+			type: "GET",
+			url : URL2, 
+			dataType : "jsonp",
+			data: "{}",
+			
+			success : function(parsed_json) {
+				for (var i = 0; i < 25; i++){
+                var hour = parsed_json['hourly_forecast'][i]['FCTTIME']['hour']
+				var temp = parsed_json['hourly_forecast'][i]['temp']
+                console.log(temp);
+				var icon = parsed_json['hourly_forecast'][i]['icon']
+				var iconURL1 = parsed_json['hourly_forecast'][i]['icon_url']
+				var iconURL = imgTag + iconURL1 + ">"       
+                div.innerHTML += ( "Hour: " + hour + ", " + "Temperature: " + Object.values(temp)[0] +"°F or " +Object.values(temp)[1] + "°C"  +", Forecast: " + icon + " " + iconURL + '<br/>' );
+                }
+            }
+    })
+}
+
+</script>
+</html>
+
