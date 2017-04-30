@@ -1,0 +1,24 @@
+Problem 8.11
+4, fork will double the calls. Fork is called in a for loop, so twice.
+
+Problem 8.12
+8. 4 From doit() and 4 from printf
+1 from doit, 1 from printf, 1 from doit, 1 from printf and so on.
+
+Problem 8.13
+x=4 - Parent
+or
+x=3 - any. Parent at the end, Child at the start
+or
+x=2 - Child
+
+Problem 8.14
+3, two from children one from main
+
+Problem 8.16
+counter = 2 the child is initialized with its own counter variable because global variable.
+
+
+Problem 8.23
+It should sent 5 signals instead of 2, but after two signals(max number of children?) all signals are moved into pending state.
+Which blocks the signals after 2.

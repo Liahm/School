@@ -1,0 +1,9 @@
+10.6
+	fd2 = 4 
+
+10.8
+	change Stat(argv[1], &stat); - line 8
+	for fstat(argv[1]. &stat) 
+
+10.10
+	Check cpfile.c

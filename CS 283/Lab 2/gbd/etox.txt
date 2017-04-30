@@ -1,0 +1,217 @@
+esl47@tux1:~/CS283/project/gdb$ gdb etox
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from etox...done.
+(gdb) b factorial
+Breakpoint 1 at 0x400797: file etox.c, line 41.
+(gdb) r
+Starting program: /home/esl47/CS283/project/gdb/etox
+This program calculates e^x
+using sum of (x^k)/k!
+Enter x, n : 1 20
+x,n =   1.0000   20
+
+Breakpoint 1, factorial (number=0) at etox.c:41
+41        int fact = 0;
+(gdb) display j
+1: j = 0
+(gdb) display fact
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 0
+2: fact = 0
+(gdb) n
+48        return(fact);
+1: j = 1
+2: fact = 0
+(gdb) n
+49       }
+1: j = 1
+2: fact = 0
+(gdb) n
+getvalue (x=1, n=20) at etox.c:32
+32                      xpow = xpow * x;
+(gdb) display xpow
+3: xpow = 1
+(gdb) n
+29              for(int k =0; k<=n; k++)
+3: xpow = 1
+(gdb) n
+31                      value += xpow / factorial(k);
+3: xpow = 1
+(gdb) n
+
+Breakpoint 1, factorial (number=1) at etox.c:41
+41        int fact = 0;
+1: j = 1
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 1
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 1
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 1
+2: fact = 0
+(gdb) n
+48        return(fact);
+1: j = 2
+2: fact = 0
+(gdb) n
+49       }
+1: j = 2
+2: fact = 0
+(gdb) n
+getvalue (x=1, n=20) at etox.c:32
+32                      xpow = xpow * x;
+3: xpow = 1
+(gdb) n
+29              for(int k =0; k<=n; k++)
+3: xpow = 1
+(gdb) n
+31                      value += xpow / factorial(k);
+3: xpow = 1
+(gdb) n
+
+Breakpoint 1, factorial (number=2) at etox.c:41
+41        int fact = 0;
+1: j = 2
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 2
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 1
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 1
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 2
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 2
+2: fact = 0
+(gdb) n
+48        return(fact);
+1: j = 3
+2: fact = 0
+(gdb) n
+49       }
+1: j = 3
+2: fact = 0
+(gdb) n
+getvalue (x=1, n=20) at etox.c:32
+32                      xpow = xpow * x;
+3: xpow = 1
+(gdb) n
+29              for(int k =0; k<=n; k++)
+3: xpow = 1
+(gdb) n
+31                      value += xpow / factorial(k);
+3: xpow = 1
+(gdb) n
+
+Breakpoint 1, factorial (number=3) at etox.c:41
+41        int fact = 0;
+1: j = 3
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 3
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 1
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 1
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 2
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 2
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 3
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 3
+2: fact = 0
+(gdb) n
+48        return(fact);
+1: j = 4
+2: fact = 0
+(gdb) n
+49       }
+1: j = 4
+2: fact = 0
+(gdb) n
+getvalue (x=1, n=20) at etox.c:32
+32                      xpow = xpow * x;
+3: xpow = 1
+(gdb) n
+29              for(int k =0; k<=n; k++)
+3: xpow = 1
+(gdb) n
+31                      value += xpow / factorial(k);
+3: xpow = 1
+(gdb) n
+
+Breakpoint 1, factorial (number=4) at etox.c:41
+41        int fact = 0;
+1: j = 4
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 4
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 1
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 1
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 2
+2: fact = 0
+(gdb) n
+43        for (j = 1; j <= number; j++)
+1: j = 2
+2: fact = 0
+(gdb) n
+45          fact = fact * j;
+1: j = 3
+2: fact = 0
+(gdb) quit

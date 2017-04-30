@@ -1,0 +1,35 @@
+7.6)
+Wrote main.c and swap.c. Compiled them both as swap.
+Then objdump -t swap
+Looked into data to find Section
+
+Symbol = The variable we are looking for and they give them to us
+Swap.o .symtab entry = no if it's a locally scoped variable.
+Symbol Type = Where the variable is created.
+Module where defined = Where the variable is defined. In this case, since only one is an external variable only that one isn't in the same module as everything else.
+Section = Found them when I I did objdump -t swap.
+
+0000000000601030 g     O .data  0000000000000008              buf
+0000000000601038 g     O .data  0000000000000008              bufp0
+0000000000601048 l     O .bss   0000000000000008              bufp1
+0000000000400501 g     F .text  000000000000004a              swap
+and so on
+
+Symbol   |   Swap.o .symtab entry?  | Symbol Type | Module where defined  |  Section
+buf      |         yes              |  external   |      main.o           | .data
+bufp0    |         yes              |  global     |      swap.o           | .data
+bufp1    |         yes              |  local      |      swap.o           | .bss
+swap     |         yes              |  global     |      swap.o           | .txt
+temp     |         yes              |  None       |      None             | None
+incr     |         no               |  local      |      swap.o           | .txt
+count    |         yes              |  local      |      swap.o           | .data
+
+
+7.7)
+current output in gdb 0x0 and 0x800000~
+X has issues. 
+Add a static to x. static double x;
+That should fix the bug.
+
+7.9)
+It never initializes main because in foo6.c it is a weak symbol and is overriden by the global variable in bar6 which is a strong variable.

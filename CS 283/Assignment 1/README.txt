@@ -1,0 +1,1 @@
+Invert file requires file named test.txt. Used that file name because the "reading from a file" tip had "test.txt", "r".

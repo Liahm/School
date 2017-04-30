@@ -1,0 +1,23 @@
+# Run 'make', then 'touch one.h' and 'make' again.
+
+CC=cc #I don't think we need this line at all.
+
+all: one #build one
+
+one: one.o main.o two.o three.o #one = all of this.
+	${CC} one.o main.o two.o three.o -o one #Another way to say it is gcc -o one one.o/two.o/main.o... but as one
+
+one.o: ext.h one.h one.c #compile one.o from one.c and headers
+	${CC} -c one.c
+
+main.o: ext.h one.h main.c #compile main.o from main.c and headers
+	${CC} -c main.c
+
+two.o: one.h two.c #compile two.o from two.c and headers
+	${CC} -c two.c
+
+three.o: one.h three.c #compile three.o from three.c and headers
+	${CC} -c three.c
+
+clean: #force delete everything with .0 or one.
+	rm -f one *.o

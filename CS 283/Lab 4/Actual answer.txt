@@ -1,0 +1,65 @@
+L4: HTTP Client-Server
+PART A
+// Client program. Send requests in a form of
+// > GET /file HTTP/1.1\r\n
+// > Host: host\r\n
+// > \r\n
+// and prints the contents of file returned by server
+#include "csapp.h"
+#include <stdio.h>
+int main (int argc, char * argv[])
+ {
+ int clientfd, port, read;
+ char * host, * file, buf[MAXLINE], request[MAXBUF];
+ rio_t rio;
+ if (argc != 4)
+ {
+ fprintf (stderr, "%s host port file\n", argv[0]) ;
+ exit(1);
+ }
+ //Parsing arguments
+ host = argv[1];
+ port = atoi(argv[2]);
+ file = argv[3];
+ //Building request line
+ sprintf (request, "GET /%s HTTP/1.1\r\n", file) ;
+ sprintf (request, "%sHost: %s\r\n", request, host) ;
+ sprintf (request, "%s\r\n", request) ;
+ printf ("\nRequest:\n") ;
+ Fputs (request, stdout) ;
+ clientfd = Open_clientfd (host, port) ;
+ Rio_readinitb (&rio, clientfd) ;
+
+ Rio_writen (clientfd, request, strlen (request) ) ;
+ while ( (read = Rio_readlineb (&rio, buf, MAXLINE) ) > 0)
+ {
+ Fputs (buf, stdout) ;
+ }
+ Close (clientfd) ;
+ exit (0) ;
+ }
+
+
+ck47@tux64-12:~$ ./ck-client www.pages.drexel.edu 80 \~ck47/
+Request:
+GET /~ck47/ HTTP/1.1
+Host: www.pages.drexel.edu
+HTTP/1.1 200 OK
+Date: Wed, 10 Feb 2016 16:33:11 GMT
+Server: Apache/2.2.17 (Unix)
+Last-Modified: Tue, 17 Sep 2013 03:36:37 GMT
+ETag: "61483c-1765-4e68c072c5b40"
+Accept-Ranges: bytes
+Content-Length: 5989
+Content-Type: text/html
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+................
+</head>
+<body bgcolor="#ffffff" link="#003399" vlink="#3c67cd" alink="#000000"
+background="back01.gif">
+................
+</body>
+</html>
+ck47@tux64-12:~$

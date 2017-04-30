@@ -1,0 +1,29 @@
+
+/*
+Starting program: /home/esl47/CS283/project/gdb/g2
+
+Breakpoint 1, main () at g2.c:8
+8         num = 1 << 31;
+1: buf = 0x0
+2: num = 32767
+(gdb) n
+9         buf = malloc(num) ;
+1: buf = 0x0
+2: num = -2147483648
+(gdb) n
+10        fgets (buf, 1024, stdin) ;
+1: buf = 0x0
+2: num = -2147483648
+(gdb) n
+
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00007ffff7a7cd27 in __GI__IO_getline_info (
+    fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0, n=1023,
+    delim=delim@entry=10, extract_delim=extract_delim@entry=1,
+    eof=eof@entry=0x0) at iogetline.c:70
+70      iogetline.c: No such file or directory.
+(gdb)
+
+In other words, 31 is too much
+*/

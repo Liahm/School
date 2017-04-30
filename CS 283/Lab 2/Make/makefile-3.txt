@@ -1,0 +1,15 @@
+PROG=	test #Variable PROG with test string for file name
+
+OBJS=	one.o main.o two.o three.o #variable OBJS with all the compile files
+
+#CFLAGS=	-Wall -g
+#Without the line above there is a chance of bugs and not being debugged.
+all: ${PROG} #Build test
+
+${PROG}: ${OBJS} #Define PROG
+	@echo $@ depends on $? #stdout ${PROG} depends on the {changed files}
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} #${CC} = gcc, ${LDFLAGS} = invoke the linker ld, ${OBJS} = that variable, -o = option to name the executable, ${PROG} = test
+	#It would read gcc -L one.o main.o two.o three.o -o test
+
+clean: #Delete anything with .o or the ls
+	rm -f ls *.o

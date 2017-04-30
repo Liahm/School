@@ -1,0 +1,60 @@
+//10.6
+#include "csapp.h"
+
+int main()
+{
+    int fd1, fd2;
+    fd1; =:,open( 11 foo.txt 11 , O_RDONLY, 0);
+    fd2 = Open("bar.txt", O_RDONLY\ O);
+    Close(fd2);
+    fd2 = Open( 11 baz. tJf;t 11 •, O_RDONLY, O)q
+    printf("fd2= %d\n" , fd2)
+    exit(O);
+ } 
+
+//10.8
+//Write a version of the statcheck program in FIGURE 10.10 called fstatcheck that takes a 
+//descriptor number on the command line rather than a filename.
+
+#include "casapp.h"
+
+int main(int argc, char **argv)
+{
+    struct stat stat;
+    char *type, *readok;
+
+    Stat(argv[1], &stat);
+    if(S_ISREG(stat.st_mode)) /*Determine file type */
+        type = "regular";
+    else if(S_ISDIR(stat.st_mode))
+        type = "directory";
+    else
+        type = "other";
+    if((stat.st_mode & S_IRUSR)) /*Check read acces */
+        readok = "yes";
+    else
+        readok = "no";
+
+    printf("type: %s, read: %s\n", type, readok);
+    exit(0);
+}
+
+//10.10
+//Modify the cpfile program in Figure 10.5 so that it takes an optional command-line
+//argument infile. If infile is given, then copy infile to standard output;
+//otherwise, copy standard output as before. The twist is that your solution
+//must use the original copy loop (lines 9-11) for both cases. You are only
+//allowed to insert code, and you are not allowed to change any of the existing code
+
+#include "casapp.h"
+
+int main(int argc, char **argv)
+{
+    int n;
+    rio_t rio;
+    char buf[MAXLINE];
+
+    Rio_readinitb(&rio, STDIN_FILENO);
+    while((n=Rio_readinitb(&rio, buf, MAXLINE)) != 0)//Can't change this
+        Rio_writen(STDOUT_FILENO, buf, n);
+}
