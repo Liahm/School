@@ -1,0 +1,57 @@
+Change Log 
+
+- 3/23/2017 - 
+Added arrows to show the direction of gravity
+Changed sound tracks.
+Fixed some wall sizes.
+Locked down the levels until the previous one is completed.
+Create a high score timer that will track how long it took you to finish the level.
+You can now use a controller to play
+Timer will become bigger when 5 seconds remaining. Also added a white font background on the timer
+Fixed many bugs and internal bugs(such as the switching layers ending in a weird position if the pellets were collected incorrectly) that never saw the daylight.
+
+
+- 3/16/2017 -
+Added a new background
+Added Music to the game.
+Added sound effect to gravity switch
+Added sound effect script to layer switch
+Added sound effect on Death
+Added sound effect on level select
+Removed Main menu
+Changed Wall colors to yellow so that the player will know where they are
+Rearrange levels
+Added a timer, If the time reaches 0 player will restart the level after a small delay.
+
+Bugs
+Fixed bug on level 2.
+
+- 3/9/2017 - 
+A lot of internal bug fixes
+Deleted unecessary scripts
+Feedback report.
+5 Levels semi redesigned after feedback.
+Multiple particle effects added to the game. On win and on the lava font.
+Changed ball color to the correct color depending on the layer.
+Changed the win condition so that it will appear increase it's opacity after pellets are collected.
+Changed win condition particle to green after all pellets has been collected.
+Added a pause after winning/death.
+
+- 3/2/2017 -
+Complete redesign levels from level 2 to level 9
+Added collectable mechanism
+Added moving platform and rotating platform mechanism
+Difficulty of the game increases as the level progresses
+Introduced gravity shift, collectable and layer shift as level progresses
+Changed the death wall color
+Added two death wall colors. Red for front and red-green for back.
+Took out dark maze and music note level
+Added pickup(), currentColor(), PlatformUpDown(), movingPlateform(), disableLayerShift() scripts
+
+- 2/23/2017 -
+Added Scene 2 and 6 through 12.
+Added some musical notes for a puzzle.
+Added colors to platforms(Scene 12) and hazards.
+Added restart(), teleportTwo(), horizontalShift(), MagneticPull(), Spikes() and levelMenu()  scripts
+Fixed cameraScroller(), nextLevel(), lvx() scripts.
+Fixed bug where user would have a random gravity force at the start of the level
