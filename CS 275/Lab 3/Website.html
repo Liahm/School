@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <head>
+        <h1> Some Math? </h1>
+ 
+        <select id="selectid">
+            <option value="N factorial" id="factorial">N factorial</option>
+            <option value="Summation Series" id="Summation">Summation Series</option>
+        </select>
+        <input type="text" id="textbox1"/>
+        <input type="button" id="button" value="Just a button" onclick="Potato()" />
+
+        <div id="output">
+        </div>
+
+    <script>
+        function Potato(){
+            var n = document.getElementById('textbox1').value;
+            var x = "Potato";
+            var selectid = document.getElementById('selectid').value;
+            var sum = 0;
+            var nsum = 0;
+            var init = n;
+            var fact = 1;
+
+            if(selectid == "N factorial")
+            {
+                for(sum = 1; sum <=init; sum++)
+                {
+                    fact = fact * sum;
+                }
+
+                if(init > 1)
+                    document.getElementById('output').innerHTML = "The factorial for " + init +" is " + fact;
+
+                else if (init == 1)
+                    document.getElementById('output').innerHTML = "The factorial for " + init +" is 1";
+                else if(init == "")
+                    document.getElementById('output').innerHTML = "Please input a number greater than 0";
+                else if (init == 0)
+                    document.getElementById('output').innerHTML = "The factorial for " + init +" is 1";    
+                else
+                    document.getElementById('output').innerHTML = "Please input a number";
+            }
+            else if(selectid == "Summation Series")
+            {
+                while(n > 0)
+                {
+                    sum += n *1;
+                    n = n-1;
+                }
+                if(init>1)         
+                    document.getElementById('output').innerHTML = "The Summation series of " + init + " is " + sum;
+                else if (init == "")
+                    document.getElementById('output').innerHTML = "Please input a number";                    
+                else if( init == 0)
+                    document.getElementById('output').innerHTML = "The Summation series of 0 is 1.";
+                else if (init < 0)
+                     document.getElementById('output').innerHTML = "Please input a positive number";
+                else
+                    document.getElementById('output').innerHTML = "Please input a number";
+            }
+        }
+    </script>
+</html>

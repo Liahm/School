@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <center> <h1> SOME TITTLE FOR THE LAB 5</h1></center>
+    </head>
+    <body>
+        <h4> Sort by: </h4>
+        <select id="Selection">
+            <option value="Student"> Student ID</option>
+            <option value="Course">Course ID</option>
+            <option value="Grades">Grades</option>
+        </select>
+        <button type="submit" onclick="display()">RUN ALGORITHM!</button>
+        <button type="submit" onclick="reset()">Reset</button>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script>
+
+        function display(){
+            var xhttp = new XMLHttpRequest();
+            var SURL = "http://localhost:8080/Student";
+            var CURL = "http://localhost:8080/course";
+            var GURL = "http://localhost:8080/grades";
+            var restorepage = document.body.innerHTML;
+            var temp = restorepage;
+
+            if(document.getElementById("Selection").value == "Student")
+            {            
+                $.ajax({
+                    type: "GET",
+                    url : SURL, 
+                    dataType : "json",
+                    data: "{}",
+                    
+                    success : function(parsed_json) 
+                    {
+                        document.write(temp);
+                        var table = '<table style="width: 50%;", border ="3"> \n <tbody>';
+                        var table2 = '<tr><td><h3>  Student ID </h3> </td> <td><h3>First Name</h3> </td> <td><h3>  Last Name </h3> </td><td><h3>  Day of Birth </h3> </td><td><h3>  Major </h3> </td>           </tr>'
+                        document.write(table + table2);
+                        for(var i =0; i<parsed_json.length; i++)
+                        {
+ 
+                            var studentID = '<tr><td> ' + parsed_json[i]['student_id'] + '</td> '
+                            var firstname = '<td>'+parsed_json[i]['first_name'] + '</td> '
+                            var lastname = '<td>'+parsed_json[i]['last_name'] +  '</td> '
+                            var dob = '<td>'+parsed_json[i]['Date_of_birth'] +  '</td> '
+                            var major = '<td>'+parsed_json[i]['Major'] +  '</td></tr> '
+                            document.write( studentID + firstname +  lastname +  dob +  major + "<br>");
+                        }
+                        var endTable = "</tbody> </table>";
+                        document.write(endTable);
+                    }
+                })
+            }
+            else if( document.getElementById("Selection").value == "Course")
+            {
+                    $.ajax({
+                    type: "GET",
+                    url : CURL, 
+                    dataType : "json",
+                    data: "{}",
+                    
+                    success : function(parsed_json) 
+                    {
+                        
+                        document.write(restorepage);
+                        var table = '<table style="width: 50%;", border ="3"> \n <tbody>';
+                        var table2 = '<tr><td><h3>  Course ID </h3> </td> <td><h3>Description</h3> </td> </tr>'
+                        document.write(table + table2);
+                        for(var i =0; i<parsed_json.length; i++)
+                        {
+                            var courseid = '<tr><td> ' + parsed_json[i]['course_id'] +'</td>'
+                            var description = '<td>'+parsed_json[i]['description']+'</td></tr> '
+                            document.write( courseid + description + "<br>");
+                        }
+                        var endTable = "</tbody> </table>";
+                        document.write(endTable);
+                    }
+                })
+            }
+            else if( document.getElementById("Selection").value == "Grades")
+            {
+                    $.ajax({
+                    type: "GET",
+                    url : GURL, 
+                    dataType : "json",
+                    data: "{}",
+                    
+                    success : function(parsed_json) 
+                    {
+                        
+                        document.write(restorepage);
+                        var table = '<table style="width: 50%;", border ="3"> \n <tbody>';
+                        var table2 = '<tr><td><h3>  Course ID </h3> </td> <td><h3>Student ID</h3> </td> <td><h3>  Term </h3> </td><td><h3>  Grade </h3> </td> </tr>'
+                        document.write(table + table2);
+                        for(var i =0; i<parsed_json.length; i++)
+                        {
+                            var courseid = '<tr><td> ' + parsed_json[i]['course_id']+'</td>'
+                            var studentID =  '<td>'+parsed_json[i]['student_id']+'</td>'
+                            var Term =  '<td>'+parsed_json[i]['Term_year']+'</td>'
+                            var grade =  '<td>'+parsed_json[i]['grade']+'</td></tr> '
+                            document.write( courseid +  studentID +  Term +  grade + "<br>");
+                        }
+                        var endTable = "</tbody> </table>";
+                        document.write(endTable);
+                    }
+                })
+            }
+        }
+        function reset()
+        {
+            location.reload();
+        }
+        var opts = {
+            url: 'http://localhost:8080'
+        };
+        </script>
+    </body>
+</html>
