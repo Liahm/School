@@ -1,0 +1,106 @@
+3.- 
+----------------------------------------------------------
+---------------------LIST---------------------------------
+----------------------------------------------------------
+----- n =  10  -----
+Time per front List insertion:  4.17470932007e-07
+Time per back List insertion:   2.65073776245e-07
+Time per List traversal:        1.11389160156e-07
+Time per front List deletion:   1.79076194763e-07
+Time per back List deletion:    1.64580345154e-07
+
+----- n =  100  -----
+Time per front List insertion:  4.20918464661e-07
+Time per back List insertion:   1.39009952545e-07
+Time per List traversal:        7.83586502075e-08
+Time per front List deletion:   1.49719715118e-07
+Time per back List deletion:    1.12731456757e-07
+
+----- n =  1000  -----
+Time per front List insertion:  2.11627531052e-06
+Time per back List insertion:   1.3210105896e-07
+Time per List traversal:        7.51302242279e-08
+Time per front List deletion:   3.31692218781e-07
+Time per back List deletion:    1.0249710083e-07
+
+----------------------------------------------------------
+---------------------ARRAY--------------------------------
+----------------------------------------------------------
+----- n =  10  -----
+Time per front Array insertion: 1.61380767822e-06
+Time per back Array insertion:  1.19631290436e-06
+Time per Array traversal:       1.22940540314e-06
+Time per front Array deletion:  2.24328041077e-06
+Time per back Array deletion:   1.79028511047e-06
+----- n =  100  -----
+Time per front Array insertion: 2.74003982544e-06
+Time per back Array insertion:  1.6101193428e-06
+Time per Array traversal:       1.61062955856e-06
+Time per front Array deletion:  3.2380604744e-06
+Time per back Array deletion:   2.14058160782e-06
+----- n =  1000  -----
+Time per front Array insertion: 1.3138917923e-05
+Time per back Array insertion:  6.70253777504e-06
+Time per Array traversal:       6.67259883881e-06
+Time per front Array deletion:  1.36673839092e-05
+Time per back Array deletion:   7.2139749527e-06
+----------------------------------------------------------
+---------------------Pointer------------------------------
+----------------------------------------------------------
+----- n =  10  -----
+Time per front Pointer insertion:       2.97529697418e-06
+Time per back Pointer insertion:        1.28826856613e-05
+Time per Pointer traversal:             4.31618690491e-06
+Time per front Pointer deletion:        3.61218452454e-06
+Time per back Pointer deletion:         2.54461050034e-05
+----- n =  100  -----
+Time per front Pointer insertion:       3.01342010498e-06
+Time per back Pointer insertion:        6.63754987717e-05
+Time per Pointer traversal:             4.32131767273e-06
+Time per front Pointer deletion:        3.61142873764e-06
+Time per back Pointer deletion:         0.000187807247639
+----- n =  1000  -----
+Time per front Pointer insertion:       3.04828381538e-06
+Time per back Pointer insertion:        0.000592389197826
+Time per Pointer traversal:             4.30086374283e-06
+Time per front Pointer deletion:        3.62582278252e-06
+Time per back Pointer deletion:         0.00181461309886 -Yes. I waited a really long time
+
+4.-
+----------------------------------------------------------
+---------------------STACK--------------------------------
+----------------------------------------------------------
+n =  10
+Time per Push Stack insertion:  2.05206871033e-07
+Time per back Stack deletion:   1.797914505e-07
+
+n =  100
+Time per Push Stack insertion:  1.36337280273e-07
+Time per back Stack deletion:   1.11179351807e-07
+
+n =  1000
+Time per Push Stack insertion:  1.31996154785e-07
+Time per back Stack deletion:   1.0364317894e-07
+
+----------------------------------------------------------
+----------------------------------------------------------
+----------------------------------------------------------
+n =  10
+Time per back Stack insertion:  4.36091423035e-07
+Time per back Stack deletion:   1.06270313263e-06
+n =  100
+Time per back Stack insertion:  1.96249485016e-07
+Time per back Stack deletion:   7.62560367584e-07
+
+-Out of range-
+----------------------------------------------------------
+----------------------------------------------------------
+----------------------------------------------------------
+n =  10
+Time per back Pointer insertion:        1.1027097702e-06
+Time per back Pointer deletion:         1.4545917511e-06
+n =  100
+Time per back Pointer insertion:        1.02003097534e-06
+Time per back Pointer deletion:         1.29271030426e-06
+
+-Out of range-

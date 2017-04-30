@@ -1,0 +1,13 @@
+For question 4 and 5 I am not sure if they are right.
+I used my code from the last assignment for the insert and, well. It's
+reverse and it feels so weird. It technically merges(4), but not sorted.
+
+For question 6 I at first did number two, my tests didn't work and I
+skipped, but I had all the information definition and classes so I reused
+them. Also I had a lot of issues creating tests cases for this question. A
+lot of 'int' isn't a cellspace.
+
+For huffman I was planning to do it without importing any directories
+because I didn't know if we were allowed to use any. I ran out of time (It
+was around 9pm when I decided to change it) and decided to use heapq
+
