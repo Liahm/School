@@ -1,0 +1,60 @@
+Open the file
+Go to HW4 - and open the project file(HW4)
+If the files didn't load in the project.
+Right click on "Source Files" to the right in the Solution Explorer.
+Add the main.cpp in the source files by choosing "Add Existing File."
+Add all the .h files in the header file by doing the same you did for main.cpp.
+The files are:
+Aquariuz.h
+Dragon_Turtle.h
+Enemy.h
+Garm.h
+Hero.h
+Shane.h
+Wiingy.h
+
+After all of them, press control+F5 to run.
+Follow the instructions and read the story.
+First, write down your name or the name you want your character to have.
+The story will unfold.
+When you have your turn up, you will get 5 options.
+By pressing 1, 2, 3, 4, or 5.
+1 is your normal attack. It has a 30% chance of critical hit. It will deal more damage if your health is low and it will heal you.
+2 is your shield. It will reduce the damage by 100%.
+3 is your special attack, the fireball which you only have 10 casts.
+4 is your potions, you only have 6.
+5 is the exit button. If you click it you will exit the game.
+
+-------------------BUGS---------------------------
+You can use heal forever. Not sure why potion keeps going even after 6 uses. There is no code to run potions if the number of potions is less than 0
+This problem doesn't appear on fireballs.
+The numbers some times go negative, as in you dealt -28 damage. This is caused by the enemy healing and the player not dealing enough damage. It meant the the enemy
+used his heal, it can be huge, and your damage wasn't high enough.
+-------------------LORE---------------------------
+
+You are reading a book about how people used to dissapear and when they came back they became new people.
+Suddenly you are dragged into another world.
+The king is infront of you and he talks to you and tells you that you are a hero.
+Sadly you aren't the hero they expected.
+The person who summoned you ran away from the town and now you have to find him to get him to send you back.
+The king gives you a sword, armor, a shield, 10 fireball flasks and 6 potions.
+You go to a mountain that you think Garm resides.
+At the entrance you see a thunder and see a wounded person.
+This is a legendary god called Aquariuz. He possess a hammer.
+He is full in adrenaline and will fight anyone. He is also blocking the way into the mountain.
+His attacks are so loud that it could be hear inside the cave.
+After defeating it you go into the mountain cave and find Shane.
+Shane is Garm's right hand and he thinks you are an intruder so he fights you.
+He is deaf because of the sound from the last fight. 
+After defeating Shane you walk to the top of the mountain where you find Garm.
+You ask him to send you back but he says that it's too late.
+He seems to be killing himself every time he attacks.
+After defeating him he will scream "Aloha Snackbar"(it's a joke) and explode.
+The mountain starts to move and you notice that the mountain is actually a dragon turtle.
+The turtle notices you and tries to shake you off.
+After defeating a huge monster you find out that another being is behind all of this. Wiingy.
+A fairy.
+After defeating her you go back to the town with the remains of Wiingy and some of garm's.
+The town knows what he did because of the dragon turtle.
+You have to decide to stay in this world and live your life as a hero or go back home.
+Sadly I am not writing any story for it... just imaging a nice life in one of the two worlds.
